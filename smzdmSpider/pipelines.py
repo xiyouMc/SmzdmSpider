@@ -18,12 +18,13 @@ class SmzdmspiderPipeline(object):
         self.hotSearch.create_indexes([idx])
 
         self.tags = db['Tags']
+        self.tags.create_indexes([idx])
 
     def process_item(self, item, spider):
         
         if isinstance(item,HotSearchItem):
             self.hotSearch.update_one({'name':item['name']},{'$set':dict(item)},upsert=True)        
         elif isinstance(item,Tags):
-            self.tags.insert(item)
+            self.tags.update_one({'name':item['name']},{'$set':dict(item)},upsert=True)        
 
         return item
