@@ -13,6 +13,11 @@ class HotSearchItem(scrapy.Item):
     href = scrapy.Field()
 
 
+class Tags(scrapy.Item):
+    name = scrapy.Field()
+    href = scrapy.Field()
+
+
 class SmzdmspiderItem(HotSearchItem):
     # define the fields for your item here like:
     # name = scrapy.Field()

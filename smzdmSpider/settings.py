@@ -22,8 +22,8 @@ NEWSPIDER_MODULE = 'smzdmSpider.spiders'
 ROBOTSTXT_OBEY = True
 
 
-FEED_URI=u'/Users/xiyouMc/Documents/smzdm.csv'
-FEED_FORMAT='CSV'
+# FEED_URI=u'/Users/xiyouMc/Documents/smzdm.csv'
+# FEED_FORMAT='CSV'
 
 # Configure maximum concurrent requests performed by Scrapy (default: 16)
 #CONCURRENT_REQUESTS = 32
@@ -68,9 +68,9 @@ FEED_FORMAT='CSV'
 
 # Configure item pipelines
 # See http://scrapy.readthedocs.org/en/latest/topics/item-pipeline.html
-#ITEM_PIPELINES = {
-#    'smzdmSpider.pipelines.SmzdmspiderPipeline': 300,
-#}
+ITEM_PIPELINES = {
+   'smzdmSpider.pipelines.SmzdmspiderPipeline': 300,
+}
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See http://doc.scrapy.org/en/latest/topics/autothrottle.html
